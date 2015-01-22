@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:tableView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

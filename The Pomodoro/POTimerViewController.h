@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface POTimerViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *Label;
+@property (weak, nonatomic) IBOutlet UIButton *Button;
 
 @end
