@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const RoundCompleteNotificationName = @"RoundCompleteNotification";
+
 @interface POTimerViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *Label;
-@property (weak, nonatomic) IBOutlet UIButton *Button;
 
 @end

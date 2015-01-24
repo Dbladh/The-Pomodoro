@@ -26,7 +26,6 @@
                     </state>
                     <connections>
                         <action selector="startTimer:" destination="-1" eventType="touchUpInside" id="UUZ-3P-Jfz"/>
-                        <action selector="timerButtonPressed:" destination="-1" eventType="touchUpInside" id="CrR-fh-b4L"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lae-D1-aaM">

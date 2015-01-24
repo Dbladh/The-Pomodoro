@@ -7,16 +7,46 @@
 //
 
 #import "POHistoryViewController.h"
+#import "POTimerViewController.h"  
 
-@interface POHistoryViewController ()
+static NSString * const CurrentRoundKey = @"CurrentRound";
+
+@interface POHistoryViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign) NSInteger currentRound;
 
 @end
 
 @implementation POHistoryViewController
 
+-(void)registerForNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRound:) name:RoundCompleteNotificationName object:nil];
+}
+
+-(void)unregisterForNotifications{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RoundCompleteNotificationName object:nil];
+}
+
+-(void)dealloc{
+    [self unregisterForNotifications];
+}
+
+-(void)setCurrentRound:(NSInteger)currentRound {
+    _currentRound = currentRound;
+    
+    [[NSUserDefaults standardUserDefaults] setValue:@(currentRound) forKeyPath:CurrentRoundKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = @"Rounds";
+    
+    
+    
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:tableView];
     
